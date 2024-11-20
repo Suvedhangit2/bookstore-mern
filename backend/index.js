@@ -8,13 +8,13 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+// app.use(cors());
 
-// app.use(cors({
-//   origin: 'https://frontend.com',  // hosted frontend domain
-//   methods: ['GET', 'POST'],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: 'https://bookstore-mern-three.vercel.app',  // hosted frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 app.get('/', (request, response) => {
   console.log(request);
