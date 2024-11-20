@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
-import { Backend_ApiURl } from '../config';
+// import { Backend_ApiURl } from '../config';
 
 const ShowBook = () => {
   const [book, setBook] = useState({});
@@ -13,7 +13,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(Backend_ApiURl + `/${id}`)
+      .get(`https://bookstore-mern-three.vercel.app/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
