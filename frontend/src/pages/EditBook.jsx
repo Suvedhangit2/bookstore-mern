@@ -4,7 +4,7 @@ import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Backend_ApiURl } from '../config';
+// import { Backend_ApiURl } from '../config';
 
 const EditBook = () => {
   const [title, setTitle] = useState('');
@@ -17,7 +17,7 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(Backend_ApiURl + `/${id}`)
+    axios.get(`https://bookstore-mern-three.vercel.app/${id}`)
     .then((response) => {
         setAuthor(response.data.author);
         setTitle(response.data.title);
@@ -38,7 +38,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(Backend_ApiURl+`/${id}`, data)
+      .put(`https://bookstore-mern-three.vercel.app/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
