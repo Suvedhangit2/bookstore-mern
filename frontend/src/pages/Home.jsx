@@ -12,7 +12,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [tableView, setTableView] = useState(true);
 
-  // const ApiUrl = 'http://localhost:4000/books';
+
   useEffect(() => {
     setLoading(true);
     axios

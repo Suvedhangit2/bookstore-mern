@@ -10,6 +10,12 @@ app.use(express.json());
 
 app.use(cors());
 
+// app.use(cors({
+//   origin: 'https://frontend.com',  // hosted frontend domain
+//   methods: ['GET', 'POST'],
+//   credentials: true
+// }));
+
 app.get('/', (request, response) => {
   console.log(request);
   return response.status(234).send('Welcome To MERN Stack Tutorial');
