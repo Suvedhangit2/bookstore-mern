@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import BooksTable from '../components/home/BooksTable';
 import BooksCard from '../components/home/BooksCard';
-import { Backend_ApiURl } from '../config';
+// import { Backend_ApiURl } from '../config';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(Backend_ApiURl)
+      .get('https://bookstore-mern-three.vercel.app')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
