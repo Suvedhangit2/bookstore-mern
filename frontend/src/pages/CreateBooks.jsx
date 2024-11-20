@@ -4,7 +4,7 @@ import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Backend_ApiURl } from '../config';
+// import { Backend_ApiURl } from '../config';
 
 const CreateBooks = () => {
   const [title, setTitle] = useState('');
@@ -22,7 +22,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post(Backend_ApiURl, data)
+      .post('https://bookstore-mern-skms.onrender.com/', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Created successfully', { variant: 'success' });
