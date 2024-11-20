@@ -4,7 +4,7 @@ import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { Backend_ApiURl } from '../config';
+// import { Backend_ApiURl } from '../config';
 
 const DeleteBook = () => {
   const [loading, setLoading] = useState(false);
@@ -15,7 +15,7 @@ const DeleteBook = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(Backend_ApiURl + `/${id}`)
+      .delete(`https://bookstore-mern-skms.onrender.com/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Deleted successfully', { variant: 'success' });
